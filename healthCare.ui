@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>796</height>
+    <height>797</height>
    </rect>
   </property>
   <property name="font">
@@ -148,7 +148,7 @@ background-color: #faf5ee;
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../resources.qrc">:/icons/icons/healthcare.png</pixmap>
+             <pixmap resource="../resources.qrc">:/icons/Health-Care-Management-System/icons/healthcare.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -313,7 +313,7 @@ background: transparent;</string>
                </property>
                <property name="icon">
                 <iconset resource="../resources.qrc">
-                 <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
+                 <normaloff>:/icons/Health-Care-Management-System/icons/search.png</normaloff>:/icons/Health-Care-Management-System/icons/search.png</iconset>
                </property>
                <property name="iconSize">
                 <size>

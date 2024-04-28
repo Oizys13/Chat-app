@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>746</width>
-    <height>682</height>
+    <width>742</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">*{
-background-image: url(&quot;:/icons/icons/bg.PNG&quot;);
+background-image: url(&quot;:/icons/Health-Care-Management-System/icons/bg.PNG&quot;);
 }</string>
      </property>
     </widget>
@@ -320,7 +320,7 @@ border: none;</string>
               </property>
               <property name="icon">
                <iconset resource="../resources.qrc">
-                <normaloff>:/icons/icons/icons8-hospital-sign-64.png</normaloff>:/icons/icons/icons8-hospital-sign-64.png</iconset>
+                <normaloff>:/icons/Health-Care-Management-System/icons/icons8-hospital-sign-64.png</normaloff>:/icons/Health-Care-Management-System/icons/icons8-hospital-sign-64.png</iconset>
               </property>
               <property name="iconSize">
                <size>
