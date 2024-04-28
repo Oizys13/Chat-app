@@ -1,9 +1,9 @@
 <RCC>
   <qresource prefix="icons">
-    <file>Health-Care-Management-System/icons/bg.PNG</file>
-    <file>Health-Care-Management-System/icons/healthcare.png</file>
-    <file>Health-Care-Management-System/icons/icons8-hospital-sign-64.png</file>
-    <file>Health-Care-Management-System/icons/icons8-medical-history-49.png</file>
-    <file>Health-Care-Management-System/icons/search.png</file>
+    <file>icons/bg.PNG</file>
+    <file>icons/healthcare.png</file>
+    <file>icons/icons8-hospital-sign-64.png</file>
+    <file>icons/icons8-medical-history-49.png</file>
+    <file>icons/search.png</file>
   </qresource>
 </RCC>
