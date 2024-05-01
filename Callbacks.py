@@ -20,6 +20,8 @@ sql_cursor = connection.cursor()
 
 mongo = pymongo.MongoClient()
 
+def validCurrentId(currentID):
+    return not (currentID==None or currentID=='')
 
 
 def SignIn(email,password):
@@ -53,6 +55,13 @@ def SignIn(email,password):
 
 
 def CreateStudent(currentID,data):
+    if(not validCurrentId(currentID)):
+        return {
+            'status': -1,
+            'error': 'Not Authorized',
+            'data': None
+        }
+
     sql_cursor.execute(f"select * from users where id={currentID}")
     adminCandidate = sql_cursor.fetchone()
     if(adminCandidate['role']!= 'admin'):
@@ -82,7 +91,7 @@ def CreateStudent(currentID,data):
 
     return {
             'status':0,
-            'error':'Created Successfully',
+            'error':None,
             'data':ret_data
         }
 
@@ -90,3 +99,26 @@ def CreateStudent(currentID,data):
 
 
 
+def getCorrespondingChats(currentID):
+    if(not validCurrentId(currentID)):
+        return {
+            'status':-1,
+            'error':'Not Authorized',
+            'data':None
+        }
+
+    pass
+
+
+
+def getCorrespondingMessages(currentID,chatID):
+    if(not validCurrentId(currentID)): return
+
+    chatRoom = mongo['messages'][chatID]
+    res = chatRoom.find('')
+    pass
+
+
+def sendMessage(currentID,message):
+
+    pass
