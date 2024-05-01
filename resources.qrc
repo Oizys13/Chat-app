@@ -1,5 +1,17 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/caret_down.png</file>
+    <file>icons/Vector (3).png</file>
+    <file>icons/Vector (2).png</file>
+    <file>icons/avatar (2).png</file>
+    <file>icons/btn.png</file>
+    <file>icons/icons8-send-24.png</file>
+    <file>icons/Vector.png</file>
+    <file>icons/avatar.png</file>
+    <file>icons/user.svg</file>
+    <file>icons/attach-file.svg</file>
+    <file>icons/Icon-button.svg</file>
+    <file>icons/search.svg</file>
     <file>icons/bg.PNG</file>
     <file>icons/healthcare.png</file>
     <file>icons/icons8-hospital-sign-64.png</file>
