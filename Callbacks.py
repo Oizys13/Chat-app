@@ -1,6 +1,7 @@
 import mysql.connector as connector
 import pymongo
 import bcrypt
+from pymongo.server_api import ServerApi
 
 bcrypt_secret = b's$cret12oaisjdpqhd-9jawpj-9qjd-19h2eh0q9jd-192jd-asjcpospchz0xinczmcpomas-djqw-9r-qhtsdnfajsf0ashgi0ewhc8ym8tcna90nchf90a'
 
@@ -8,17 +9,29 @@ salt = bcrypt.gensalt()
 
 
 connection  = connector.connect(
-    host="",
-    user="",
-    password="",
-    database=""
+    host="monorail.proxy.rlwy.net",
+    user="root",
+    password="EfSYqdABwcnRZMlenSDeXHQHgkjGYofR",
+    port="52256",
+    database="railway"
 )
+
 
 
 sql_cursor = connection.cursor()
 
 
-mongo = pymongo.MongoClient()
+mongo = pymongo.mongo_client.MongoClient("mongodb+srv://MOUL_BALON:luqbmQXfJfW7lwJY@cluster0b.ucohiqk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0B",server_api=ServerApi('1'))
+
+
+def getDb():
+    return mongo['bddd']
+
+def execute_query(collection,query):
+    result = collection.find(query)
+    return result
+
+
 
 def validCurrentId(currentID):
     return not (currentID==None or currentID=='')
@@ -97,9 +110,17 @@ def CreateStudent(currentID,data):
 
 
 
+# promo == * => lobby
 
-
-def getCorrespondingChats(currentID):
+def getCorrespondingChat(currentID):
+    sql_cursor.execute(f'select * from users where id={currentID} ')
+    user = sql_cursor.fetchone()
+    if(user.promo=='*' and (not user.groupe=='*')) :
+        return {
+            'status': -2,
+            'error': 'Invalid ChatRoom',
+            'data': None
+        }
     if(not validCurrentId(currentID)):
         return {
             'status':-1,
@@ -107,18 +128,33 @@ def getCorrespondingChats(currentID):
             'data':None
         }
 
+    chatrooms = mongo['bddd']['chatrooms']
+    result = chatrooms.find({'promo':user.promo,'groupe':user.groupe})
+
     pass
 
 
 
-def getCorrespondingMessages(currentID,chatID):
+def getCorrespondingMessages(currentID,promo,groupe,setNewMessages):
     if(not validCurrentId(currentID)): return
 
-    chatRoom = mongo['messages'][chatID]
-    res = chatRoom.find('')
+    chatRooms = mongo['bddd']['chatrooms']
+    messages = mongo['bddd']['messages']
+    chatRoom = chatRooms.find_one({'promo':promo,'groupe':groupe})
+    with chatRoom.watch() as stream :
+        for change in stream:
+            print('Change detected:', change)
+            setNewMessages(change)
+
+
     pass
 
 
-def sendMessage(currentID,message):
+def sendMessage(currentUser,chatID,promo,groupe,message):
+    db = mongo['bddd']
+    chatRooms = db['chatrooms']
+    messages = db['messages']
+    msg = messages.insert_one(message)
+    result = chatRooms.update_one({'promo':promo,'groupe':groupe},{'$push':{'messages':msg.inserted_id}})
 
     pass
