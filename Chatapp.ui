@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1488</width>
-    <height>1432</height>
+    <height>1427</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font-family: 'Open Sans';</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">
@@ -26,6 +29,21 @@ background-color:#ffffff;
 </string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QWidget" name="leftMenu_widget" native="true">
       <property name="minimumSize">
@@ -40,6 +58,11 @@ background-color:#ffffff;
         <height>16777215</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">#leftMenu_widget{
+border-right: 1px solid #E1E5EA;
+}</string>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
         <widget class="QWidget" name="search_widget_2" native="true">
@@ -51,7 +74,7 @@ background-color:#ffffff;
          </property>
          <property name="minimumSize">
           <size>
-           <width>360</width>
+           <width>350</width>
            <height>80</height>
           </size>
          </property>
@@ -123,8 +146,19 @@ borders: none;</string>
             </property>
             <property name="font">
              <font>
-              <pointsize>24</pointsize>
+              <family>Inter</family>
+              <pointsize>-1</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-family: Inter;
+font-size: 24px;
+font-weight: 600;
+line-height: 36px;
+text-align: left;
+</string>
             </property>
             <property name="text">
              <string>Chats</string>
@@ -175,7 +209,33 @@ borders: none;</string>
        </item>
        <item>
         <widget class="QWidget" name="chatList_widget" native="true">
+         <property name="styleSheet">
+          <string notr="true">*{
+styleName: text-base-500;
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 20px;
+text-align: left;
+
+}</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item alignment="Qt::AlignVCenter">
            <widget class="QWidget" name="chat1_widget" native="true">
             <property name="sizePolicy">
@@ -191,10 +251,38 @@ borders: none;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">justify-content: center;
-flex-items:center;</string>
+             <string notr="true">*{
+justify-content: center;
+flex-items:center;
+styleName: text-base-500;
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 20px;
+text-align: left;
+
+}
+chat1_widget:hover {
+    background-color: #F6F6F9;
+ /* Change background color on hover */
+}</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="grouppic">
                <property name="minimumSize">
@@ -232,26 +320,29 @@ flex-items:center;</string>
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout">
-                <property name="verticalSpacing">
+                <property name="leftMargin">
                  <number>0</number>
                 </property>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="groupname">
-                  <property name="font">
-                   <font>
-                    <pointsize>15</pointsize>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Groupe 1</string>
-                  </property>
-                 </widget>
-                </item>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
                 <item row="0" column="1" alignment="Qt::AlignRight">
                  <widget class="QLabel" name="time">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -263,11 +354,14 @@ flex-items:center;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="0" alignment="Qt::AlignLeft">
+                <item row="1" column="0">
                  <widget class="QLabel" name="latestmessage">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -276,6 +370,21 @@ flex-items:center;</string>
                   </property>
                   <property name="text">
                    <string>Thank you!</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="groupname">
+                  <property name="font">
+                   <font>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Groupe 1</string>
                   </property>
                  </widget>
                 </item>
@@ -301,9 +410,31 @@ flex-items:center;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">justify-content: center;
-flex-items:center;</string>
+flex-items:center;
+styleName: text-base-500;
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 20px;
+text-align: left;
+</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="label_7">
                <property name="minimumSize">
@@ -341,14 +472,29 @@ flex-items:center;</string>
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout_2">
-                <property name="verticalSpacing">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
                  <number>0</number>
                 </property>
                 <item row="0" column="0">
                  <widget class="QLabel" name="groupname_2">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -360,7 +506,10 @@ flex-items:center;</string>
                  <widget class="QLabel" name="time_2">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -376,7 +525,10 @@ flex-items:center;</string>
                  <widget class="QLabel" name="latestmessage_2">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -410,9 +562,31 @@ flex-items:center;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">justify-content: center;
-flex-items:center;</string>
+flex-items:center;
+styleName: text-base-500;
+font-family: Inter;
+font-size: 15px;
+font-weight: 500;
+line-height: 20px;
+text-align: left;
+</string>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QLabel" name="label_11">
                <property name="minimumSize">
@@ -450,14 +624,29 @@ flex-items:center;</string>
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QGridLayout" name="gridLayout_3">
-                <property name="verticalSpacing">
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
                  <number>0</number>
                 </property>
                 <item row="0" column="0">
                  <widget class="QLabel" name="groupname_3">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -469,7 +658,10 @@ flex-items:center;</string>
                  <widget class="QLabel" name="time_3">
                   <property name="font">
                    <font>
-                    <pointsize>12</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -485,7 +677,10 @@ flex-items:center;</string>
                  <widget class="QLabel" name="latestmessage_3">
                   <property name="font">
                    <font>
-                    <pointsize>15</pointsize>
+                    <family>Inter</family>
+                    <pointsize>-1</pointsize>
+                    <weight>62</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="styleSheet">
@@ -520,6 +715,8 @@ flex-items:center;</string>
         </widget>
        </item>
       </layout>
+      <zorder>chatList_widget</zorder>
+      <zorder>search_widget_2</zorder>
      </widget>
     </item>
     <item>
@@ -531,6 +728,21 @@ flex-items:center;</string>
        </size>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QWidget" name="search_widget" native="true">
          <property name="maximumSize">
@@ -538,6 +750,12 @@ flex-items:center;</string>
            <width>16777215</width>
            <height>80</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#search_widget{
+border-bottom: 1px solid #E1E5EA;
+}
+</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
@@ -587,7 +805,10 @@ flex-items:center;</string>
             </property>
             <property name="font">
              <font>
-              <pointsize>16</pointsize>
+              <family>Inter</family>
+              <pointsize>-1</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
              </font>
             </property>
             <property name="styleSheet">
@@ -595,7 +816,13 @@ flex-items:center;</string>
 border:12px;
 border-radius: 8px;
 color:929FB1;
-padding-left: 10px;</string>
+padding-left: 10px;
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+</string>
             </property>
             <property name="placeholderText">
              <string>Search</string>
@@ -639,11 +866,312 @@ borders: none;</string>
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="mainChatScreen" native="true">
+        <widget class="QScrollArea" name="scrollArea">
          <property name="styleSheet">
           <string notr="true">background: #F6F6F9;
-</string>
+border:none;</string>
          </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>1008</width>
+            <height>1271</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QFrame" name="sendermessageFrame">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item alignment="Qt::AlignRight">
+               <widget class="QFrame" name="sendermessagebodyFrame">
+                <property name="styleSheet">
+                 <string notr="true">background-color: #EBFFED;
+top: 18px;
+left: 540px;
+padding: 8px 12px 8px 12px;
+gap: 0px;
+border-radius: 16px;
+border-bottom-right-radius: 0px;
+opacity: 0px;
+box-shadow-bo: 0px 1px 1px 0px #00000026;
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="sendermessagetext">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>443</width>
+                     <height>56</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>592</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Open Sans</family>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: transparent;
+color:#181D25;
+
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Hi, Its long time we didn’t messaged, How your work</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" alignment="Qt::AlignRight|Qt::AlignBottom">
+                  <widget class="QLabel" name="sendermessagetime">
+                   <property name="font">
+                    <font>
+                     <family>Open Sans</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;
+color:#929FB1;
+padding:0;</string>
+                   </property>
+                   <property name="text">
+                    <string>19:45</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="senderpic">
+                <property name="minimumSize">
+                 <size>
+                  <width>56</width>
+                  <height>56</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>56</width>
+                  <height>56</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="resources.qrc">:/icons/icons/avatar (1).png</pixmap>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="receivermessageFrame">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <widget class="QLabel" name="senderpic_3">
+                <property name="minimumSize">
+                 <size>
+                  <width>56</width>
+                  <height>56</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>56</width>
+                  <height>56</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="resources.qrc">:/icons/icons/avatar (1).png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignLeft">
+               <widget class="QFrame" name="receivermessagebodyFrame">
+                <property name="styleSheet">
+                 <string notr="true">background-color: #FFFFFF;
+top: 618px;
+left: 86px;
+padding: 8px 12px 8px 12px;
+gap: 0px;
+border-radius: 16px;
+border-bottom-left-radius: 0px;
+opacity: 0px;
+box-shadow-bo: 0px 1px 1px 0px #00000026;
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>0</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>3</number>
+                 </property>
+                 <item row="0" column="0" alignment="Qt::AlignLeft">
+                  <widget class="QLabel" name="receivermessagetext">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>443</width>
+                     <height>56</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>592</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <family>Open Sans</family>
+                     <pointsize>12</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: transparent;
+color:#181D25;
+</string>
+                   </property>
+                   <property name="text">
+                    <string>Hi, Its long time we didn’t messaged, How your work</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" alignment="Qt::AlignRight|Qt::AlignBottom">
+                  <widget class="QLabel" name="receivermessagetime">
+                   <property name="font">
+                    <font>
+                     <family>Open Sans</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;
+color:#929FB1;
+padding:0;</string>
+                   </property>
+                   <property name="text">
+                    <string>19:45</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>1058</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
        <item>
@@ -659,6 +1187,11 @@ borders: none;</string>
            <width>16777215</width>
            <height>80</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#messageInput_widget{
+border-top: 1px solid #E1E5EA;
+}</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="leftMargin">
@@ -735,36 +1268,23 @@ borders: none;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="messageinput">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>60</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>16</pointsize>
-                </font>
-               </property>
+              <widget class="QTextEdit" name="messageinput">
                <property name="styleSheet">
                 <string notr="true">background-color: #F6F7F9;
 border:12px;
 border-radius: 8px;
 color:929FB1;
-padding-left: 10px;</string>
-               </property>
-               <property name="text">
-                <string/>
+padding-top: 15px;
+padding-left: 10px;
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+</string>
                </property>
                <property name="placeholderText">
-                <string>Type Message</string>
+                <string>Type message</string>
                </property>
               </widget>
              </item>
@@ -817,6 +1337,11 @@ borders: none;</string>
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#details_widget{
+border-left: 1px solid #E1E5EA;
+}</string>
       </property>
      </widget>
     </item>

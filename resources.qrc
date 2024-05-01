@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/avatar (1).png</file>
     <file>icons/caret_down.png</file>
     <file>icons/Vector (3).png</file>
     <file>icons/Vector (2).png</file>
