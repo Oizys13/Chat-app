@@ -1,5 +1,13 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/icons8-hide-50.png</file>
+    <file>icons/icons8-add-file-52.png</file>
+    <file>icons/icons8-logout-48.png</file>
+    <file>icons/icons8-image-file-48.png</file>
+    <file>icons/icons8-pdf-48.png</file>
+    <file>icons/icons8-photo-64.png</file>
+    <file>icons/icons8-x-48.png</file>
+    <file>icons/Icon-button.png</file>
     <file>icons/avatar (1).png</file>
     <file>icons/caret_down.png</file>
     <file>icons/Vector (3).png</file>
