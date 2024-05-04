@@ -131,9 +131,17 @@ class MyMainWindow(QMainWindow):
         self.set_page(self.login_page)
 
     def show_create_student_page(self):
+        if(self.current_user ==None):
+            self.show_login_page()
+        if(self.current_user[4]!='admin'):
+            self.show_chat_app()
         self.set_page(self.create_student_page)
 
     def show_chat_app(self):
+        if(self.current_user ==None):
+            self.show_login_page()
+        if(self.current_user[4]!='student'):
+            self.show_create_student_page()
         print('current user :',self.current_user)
         self.set_page(self.chat_app)
 
