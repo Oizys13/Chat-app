@@ -10,6 +10,7 @@ import motor.motor_asyncio
 from Callbacks import *
 
 
+
 email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
 
 
@@ -62,6 +63,10 @@ class MyMainWindow(QMainWindow):
 
 
         self.create_student_page = loadUi('CreateStudent.ui')
+        self.create_student_page.signup_button.clicked.connect(self.handleCreateStudent)
+
+
+
         self.chat_app = loadUi('Chatapp.ui')
 
 
@@ -69,15 +74,46 @@ class MyMainWindow(QMainWindow):
         self.show_login_page()
 
 
+    def handleCreateStudent(self):
+        print('wassap')
+        # if(self.current_user == None): return
+        first_name = self.create_student_page.firstname.text()
+        last_name = self.create_student_page.lastname.text()
+        username = self.create_student_page.username.text()
+
+        email = self.create_student_page.email.text()
+        password = self.create_student_page.password.text()
+
+        # promo = self.create_student_page.promo.text()
+        # groupe = self.create_student_page.groupe.text()
+
+        res = threading.Thread(target=CreateStudent,args=[None,{
+            'first_name':first_name,
+            'last_name':last_name,
+            'username':username,
+            'email':email,
+            'password':password,
+            'promo':'2cs',
+            'groupe':'2'
+        }])
+        print(res.start())
+        pass
+
+
     def handleSignIn(self):
         email=self.login_page.email.text()
         password = self.login_page.password.text()
         if(re.fullmatch(email_regex,email) and len(password)>4):
-            print("Input Validated")
+            # print("Input Validated")
             print('Checking with DB')
             response = SignIn(email,password)
+            print(response)
             if(response['data']!=None):
                 self.current_user = response['data']
+                if(self.current_user[4]=='student'):
+                   self.show_chat_app()
+                elif(self.current_user[4]=='admin'):
+                    self.show_create_student_page()
 
         self.login_page.password.setText('')
         pass
@@ -97,6 +133,7 @@ class MyMainWindow(QMainWindow):
         self.set_page(self.create_student_page)
 
     def show_chat_app(self):
+        print('current user :',self.current_user)
         self.set_page(self.chat_app)
 
 
