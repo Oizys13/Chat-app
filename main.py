@@ -143,6 +143,12 @@ class MyMainWindow(QMainWindow):
         if(self.current_user[4]!='student'):
             self.show_create_student_page()
         print('current user :',self.current_user)
+
+
+        # now we know we are a student trying to get messages
+        #  first we get the messages list
+        # then we itterate over them messages and append to the grid conditionally
+        #
         self.set_page(self.chat_app)
 
 
