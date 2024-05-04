@@ -76,7 +76,7 @@ class MyMainWindow(QMainWindow):
         self.ui.fileButton.clicked.connect(lambda : self.ui.stackedWidget.setCurrentWidget(self.ui.filespage))
         self.ui.sendmessageButton.clicked.connect(self.add_chat_message_sender)
 
-
+        #self.ui.sendmessageButton.clicked.connect(lambda: self.copy_frame())
         #send message
         #self.ui.sendmessageButton.clicked.connect()
         #upload file in message
@@ -85,7 +85,7 @@ class MyMainWindow(QMainWindow):
         #self.ui.pushButton_5.clicked.connect()
         #logout
         #self.ui.logout.clicked.connect()
-        #search in caht
+        #search in chat
         #self.ui.addimageButton.clicked.connect()
     
     def copy_frame(self):
@@ -99,17 +99,21 @@ class MyMainWindow(QMainWindow):
             new_widget = QLabel(widget.text())
             new_frame_layout.addWidget(new_widget)
 
+            
+
     def add_chat_message_sender(self):
-        self.first_frame = self.ui.scrollArea.findChildren(QFrame)[0]
+        self.first_frame = self.ui.promoscrollarea.findChildren(QFrame)[0]
 
         self.clone_layout = QVBoxLayout()
 
         # Copy contents of the first frame to the clone layout
         for child_widget in self.first_frame.children():
             # Create a copy of the child widget
-            if isinstance(child_widget, QPushButton):  # Example widget type
-                cloned_widget = QPushButton(child_widget.text(), self)
-                self.clone_layout.addWidget(cloned_widget)
+            if isinstance(child_widget, QFrame):
+                for child2 in child_widget.children():
+                    if isinstance(child2,QFrame):  # Example widget type
+                        cloned_widget = QLabel(child2.text(), self)
+                        self.clone_layout.addWidget(cloned_widget)
 
     def goToLoginPage(self):
         widget.setCurrentIndex(widget.currentIndex()-1)
