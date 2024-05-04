@@ -74,6 +74,7 @@ class MyMainWindow(QMainWindow):
         self.show_login_page()
 
 
+
     def handleCreateStudent(self):
         print('wassap')
         # if(self.current_user == None): return
