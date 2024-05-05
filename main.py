@@ -560,6 +560,165 @@ class MyMainWindow(QMainWindow):
             self.receivermessagetext_3.setText(str(message))
             self.receivermessagetime_3.setText("19:45")    
 
+
+
+    def create_message_widget(self,current_user,message):
+        if (current_user==1):
+            sendermessageFrame_2 = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents_3)
+            sendermessageFrame_2.setMinimumSize(QtCore.QSize(0, 90))
+            sendermessageFrame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+            sendermessageFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+            sendermessageFrame_2.setObjectName("sendermessageFrame_2")
+            sendermessageFrame_2.setMinimumSize(QtCore.QSize(467, 50))
+            sendermessageFrame_2.setMaximumSize(QtCore.QSize(16777215, 90))
+            sendermessageFrame_2.setBaseSize(QtCore.QSize(467, 50))
+            horizontalLayout_13 = QtWidgets.QHBoxLayout(sendermessageFrame_2)
+            horizontalLayout_13.setObjectName("horizontalLayout_13")
+            sendermessagebodyFrame_2 = QtWidgets.QFrame(sendermessageFrame_2)
+            sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+            sizePolicy.setHorizontalStretch(0)
+            sizePolicy.setVerticalStretch(0)
+            sizePolicy.setHeightForWidth(sendermessagebodyFrame_2.sizePolicy().hasHeightForWidth())
+            sendermessagebodyFrame_2.setSizePolicy(sizePolicy)
+            sendermessagebodyFrame_2.setMinimumSize(QtCore.QSize(467, 50))
+            sendermessagebodyFrame_2.setMaximumSize(QtCore.QSize(16777215, 90))
+            sendermessagebodyFrame_2.setBaseSize(QtCore.QSize(467, 50))
+            sendermessagebodyFrame_2.setStyleSheet("background-color: #EBFFED;\n"
+            "top: 18px;\n"
+            "left: 540px;\n"
+            "padding: 8px 12px 8px 12px;\n"
+            "\n"
+            "border-radius: 16px;\n"
+            "border-bottom-right-radius: 0px;\n"
+            "\n"
+            "")
+            sendermessagebodyFrame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+            sendermessagebodyFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+            sendermessagebodyFrame_2.setObjectName("sendermessagebodyFrame_2")
+            gridLayout_8 = QtWidgets.QGridLayout(sendermessagebodyFrame_2)
+            gridLayout_8.setContentsMargins(0, 0, 0, 0)
+            gridLayout_8.setHorizontalSpacing(0)
+            gridLayout_8.setVerticalSpacing(3)
+            gridLayout_8.setObjectName("gridLayout_8")
+            sendermessagetext_2 = QtWidgets.QLabel(sendermessagebodyFrame_2)
+            sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+            sizePolicy.setHorizontalStretch(0)
+            sizePolicy.setVerticalStretch(0)
+            sizePolicy.setHeightForWidth(sendermessagetext_2.sizePolicy().hasHeightForWidth())
+            sendermessagetext_2.setSizePolicy(sizePolicy)
+            sendermessagetext_2.setMinimumSize(QtCore.QSize(443, 50))
+            sendermessagetext_2.setMaximumSize(QtCore.QSize(592, 50))
+            font = QtGui.QFont()
+            font.setFamily("Open Sans")
+            font.setPointSize(12)
+            sendermessagetext_2.setFont(font)
+            sendermessagetext_2.setStyleSheet("background-color: transparent;\n"
+            "color:#181D25;\n"
+            "\n"
+            "")
+            sendermessagetext_2.setWordWrap(True)
+            sendermessagetext_2.setObjectName("sendermessagetext_2")
+            gridLayout_8.addWidget(sendermessagetext_2, 0, 0, 1, 1)
+            sendermessagetime_2 = QtWidgets.QLabel(sendermessagebodyFrame_2)
+            font = QtGui.QFont()
+            font.setFamily("Open Sans")
+            font.setPointSize(10)
+            sendermessagetime_2.setFont(font)
+            sendermessagetime_2.setStyleSheet("background:transparent;\n"
+            "color:#929FB1;\n"
+            "padding:0;")
+            sendermessagetime_2.setObjectName("sendermessagetime_2")
+            gridLayout_8.addWidget(sendermessagetime_2, 1, 0, 1, 1, QtCore.Qt.AlignRight|QtCore.Qt.AlignBottom)
+            horizontalLayout_13.addWidget(sendermessagebodyFrame_2, 0, QtCore.Qt.AlignRight)
+            senderpic_2 = QtWidgets.QLabel(sendermessageFrame_2)
+            senderpic_2.setMinimumSize(QtCore.QSize(56, 56))
+            senderpic_2.setMaximumSize(QtCore.QSize(56, 56))
+            senderpic_2.setText("")
+            senderpic_2.setPixmap(QtGui.QPixmap(":/icons/icons/avatar (1).png"))
+            senderpic_2.setObjectName("senderpic_2")
+            sendermessagetext_2.setText(str(message))
+            sendermessagetime_2.setText("19:45")
+            self.horizontalLayout_13.addWidget(self.senderpic_2)
+                
+            return sendermessageFrame_2
+        else:
+            receivermessageFrame_2 = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents_3)
+            receivermessageFrame_2.setMinimumSize(QtCore.QSize(550, 90))
+            receivermessageFrame_2.setMaximumSize(QtCore.QSize(443, 90))
+            receivermessageFrame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+            receivermessageFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+            receivermessageFrame_2.setObjectName("receivermessageFrame_2")
+            horizontalLayout_14 = QtWidgets.QHBoxLayout(receivermessageFrame_2)
+            horizontalLayout_14.setObjectName("horizontalLayout_14")
+            senderpic_4 = QtWidgets.QLabel(receivermessageFrame_2)
+            senderpic_4.setMinimumSize(QtCore.QSize(56, 56))
+            senderpic_4.setMaximumSize(QtCore.QSize(56, 56))
+            senderpic_4.setText("")
+            senderpic_4.setPixmap(QtGui.QPixmap(":/icons/icons/avatar (1).png"))
+            senderpic_4.setObjectName("senderpic_4")
+            horizontalLayout_14.addWidget(senderpic_4)
+            receivermessagebodyFrame_2 = QtWidgets.QFrame(receivermessageFrame_2)
+            receivermessagebodyFrame_2.setMinimumSize(QtCore.QSize(0, 0))
+            receivermessagebodyFrame_2.setMaximumSize(QtCore.QSize(592, 90))
+            receivermessagebodyFrame_2.setStyleSheet("background-color: #FFFFFF;\n"
+            "top: 618px;\n"
+            "left: 86px;\n"
+            "padding: 8px 12px 8px 12px;\n"
+            "\n"
+            "border-radius: 16px;\n"
+            "border-bottom-left-radius: 0px;\n"
+            "")
+            receivermessagebodyFrame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+            receivermessagebodyFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+            receivermessagebodyFrame_2.setObjectName("receivermessagebodyFrame_2")
+            gridLayout_9 = QtWidgets.QGridLayout(receivermessagebodyFrame_2)
+            gridLayout_9.setContentsMargins(0, 0, 0, 0)
+            gridLayout_9.setHorizontalSpacing(0)
+            gridLayout_9.setVerticalSpacing(3)
+            gridLayout_9.setObjectName("gridLayout_9")
+            receivermessagetime_2 = QtWidgets.QLabel(receivermessagebodyFrame_2)
+            receivermessagetime_2.setMaximumSize(QtCore.QSize(16777215, 10))
+            font = QtGui.QFont()
+            font.setFamily("Open Sans")
+            font.setPointSize(10)
+            receivermessagetime_2.setFont(font)
+            receivermessagetime_2.setStyleSheet("background:transparent;\n"
+            "color:#929FB1;\n"
+            "padding:0;")
+            receivermessagetime_2.setObjectName("receivermessagetime_2")
+            gridLayout_9.addWidget(receivermessagetime_2, 1, 1, 1, 1)
+            receivermessagetext_2 = QtWidgets.QLabel(receivermessagebodyFrame_2)
+            sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+            sizePolicy.setHorizontalStretch(0)
+            sizePolicy.setVerticalStretch(0)
+            sizePolicy.setHeightForWidth(receivermessagetext_2.sizePolicy().hasHeightForWidth())
+            receivermessagetext_2.setSizePolicy(sizePolicy)
+            receivermessagetext_2.setMinimumSize(QtCore.QSize(443, 50))
+            receivermessagetext_2.setMaximumSize(QtCore.QSize(592, 90))
+            font = QtGui.QFont()
+            font.setFamily("Open Sans")
+            font.setPointSize(12)
+            receivermessagetext_2.setFont(font)
+            receivermessagetext_2.setStyleSheet("background-color: transparent;\n"
+            "color:#181D25;\n"
+            "")
+            receivermessagetext_2.setWordWrap(True)
+            receivermessagetext_2.setObjectName("receivermessagetext_2")
+            gridLayout_9.addWidget(receivermessagetext_2, 0, 0, 1, 1, QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+            receivermessagetext_2.setText(str(message))
+            receivermessagetime_2.setText("19:45")
+            self.horizontalLayout_14.addWidget(self.receivermessagebodyFrame_2)
+
+            return receivermessageFrame_2  
+
+    def append_message_to_ui(self,layout,widget):
+        #promo layout = self.ui.verticalLayout_8.addWidget(self.sendermessageFrame_2)
+        #group layout = self.ui.verticalLayout_9.addWidget(self.receivermessageFrame)
+        #lobby layout = self.horizontalLayout_13.addWidget(self.senderpic_2)
+        layout.addWidget(widget)
+        
+
+           
     def add_chat_message_sender(self):
         self.first_frame = self.ui.promoscrollarea.findChildren(QFrame)[0]
 
