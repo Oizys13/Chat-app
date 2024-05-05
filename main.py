@@ -56,6 +56,8 @@ class MyMainWindow(QMainWindow):
         self.current_user = None
         self.login_error = None
         self.create_error = None
+        self.watcher = MongoDBWatcher(self)
+        self.current_chat = None
 
 
         self.login_page = loadUi('ChatloginPage.ui')
