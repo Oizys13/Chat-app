@@ -35,6 +35,8 @@ mongo = pymongo.mongo_client.MongoClient("mongodb+srv://MOUL_BALON:luqbmQXfJfW7l
 def getDb():
     return mongo['bddd']
 
+
+
 def execute_query(collection,query):
     result = collection.find(query)
     return result
@@ -43,6 +45,7 @@ def execute_query(collection,query):
 
 def validCurrentId(currentID):
     return not (currentID==None or currentID=='')
+
 
 
 def SignIn(email,password):
@@ -57,7 +60,7 @@ def SignIn(email,password):
     sql_cursor.execute(f"select * from users where email='{email}'")
     # print('executed')
     user = sql_cursor.fetchone()
-    print('user; ',user)
+    # print('user; ',user)
     if(not user): return {
             'status':-1,
             'error':'Invalid Credentials',
@@ -129,10 +132,10 @@ def CreateStudent(currentID,data):
     query_string = f"insert into users (first_name,last_name,hashed_password,role,email,username,promo,groupe) values('{data['first_name']}' ,'{data['last_name']}' , '{hashed_password.decode('utf-8')}' , 'student','{data['email']}','{data['username']}' ,'{data['promo']}' ,'{data['groupe']}' )"
 
     print("qs: ", query_string)
-    print(sql_cursor.execute(query_string))
+    # print(sql_cursor.execute(query_string))
 
     ret_data = sql_cursor.fetchone()
-    print(ret_data)
+    # print(ret_data)
 
     return {
             'status':0,
@@ -181,15 +184,18 @@ def getCorrespondingMessages(currentID,promo,groupe,setNewMessages):
     #         print('Change detected:', change)
     #         setNewMessages(change)
 
-    print(chatRoom)
+    # print(chatRoom)
+    return chatRoom
 
 
 
-def sendMessage(currentUser,chatID,promo,groupe,message):
+def sendMessage(currentUser,promo,groupe,message):
+    if(currentUser == None or currentUser[0]!=message['userID'] ):
+        return
     db = mongo['bddd']
     chatRooms = db['chatrooms']
-    messages = db['messages']
-    msg = messages.insert_one(message)
-    result = chatRooms.update_one({'promo':promo,'groupe':groupe},{'$push':{'messages':msg.inserted_id}})
-
+    result = chatRooms.update_one({'promo':promo,'groupe':groupe},{'$push':{'messages':message}},upsert=True)
+    # print('update result : ',result)
+    # print(chatRooms.find())
+    return result
     pass

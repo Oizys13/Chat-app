@@ -120,6 +120,8 @@ def add_promo_sent_message_to_ui(self, ):
     scroll_bar.setValue(scroll_bar.maximum())
 
 
+def append_message_to_body(self,frame,message,current_user)
+
 def add_promo_received_message_to_ui(self):
     self.receivermessageFrame_2 = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents_3)
     self.receivermessageFrame_2.setMinimumSize(QtCore.QSize(550, 90))
