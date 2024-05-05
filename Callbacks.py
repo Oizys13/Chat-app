@@ -168,18 +168,21 @@ def getCorrespondingChat(currentID):
 
 
 def getCorrespondingMessages(currentID,promo,groupe,setNewMessages):
-    if(not validCurrentId(currentID)): return
-
+    # if(not validCurrentId(currentID)): return
     chatRooms = mongo['bddd']['chatrooms']
-    messages = mongo['bddd']['messages']
+    # messages = mongo['bddd']['messages']
+
+    # corresponding_messages = chatRooms.find({"promo": promo,"groupe":groupe})
+
     chatRoom = chatRooms.find_one({'promo':promo,'groupe':groupe})
-    with chatRoom.watch() as stream :
-        for change in stream:
-            print('Change detected:', change)
-            setNewMessages(change)
 
+    # with chatRoom.watch() as stream :
+    #     for change in stream:
+    #         print('Change detected:', change)
+    #         setNewMessages(change)
 
-    pass
+    print(chatRoom)
+
 
 
 def sendMessage(currentUser,chatID,promo,groupe,message):

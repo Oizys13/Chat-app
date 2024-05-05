@@ -71,7 +71,15 @@ class MyMainWindow(QMainWindow):
 
 
 
+
         self.show_login_page()
+
+
+    def handleSendMessage(self):
+        if(self.current_user==None):
+            self.show_login_page()
+
+        # we get the input from the field
 
 
 
