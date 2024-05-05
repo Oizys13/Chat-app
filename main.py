@@ -70,7 +70,9 @@ class MyMainWindow(QMainWindow):
 
 
         self.chat_app = loadUi('Chatapp.ui')
-
+        self.chat_app.promoButton.clicked.connect(lambda: self.chat_app.chats_stackedwidget.setCurrentWidget(self.chat_app.promopage))
+        self.chat_app.groupeButton.clicked.connect(lambda: self.chat_app.chats_stackedwidget.setCurrentWidget(self.chat_app.grouppage))
+        self.chat_app.lobbybutton.clicked.connect(lambda: self.chat_app.chats_stackedwidget.setCurrentWidget(self.chat_app.lobbypage))
 
 
 
