@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.widget_4)
         self.chatList_widget = QtWidgets.QWidget(self.leftMenu_widget)
         self.chatList_widget.setStyleSheet("font-family: Inter;\n"
-"")
+"color: rgb(57, 57, 57);")
         self.chatList_widget.setObjectName("chatList_widget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.chatList_widget)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -168,6 +168,7 @@ class Ui_MainWindow(object):
 "border: none;\n"
 "text-align: left;\n"
 "padding:20px;\n"
+"color: rgb(57, 57, 57);\n"
 "}\n"
 "QPushButton::hover{\n"
 "background: #EBFFED;\n"
@@ -341,6 +342,7 @@ class Ui_MainWindow(object):
         self.promopage = QtWidgets.QWidget()
         self.promopage.setObjectName("promopage")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.promopage)
+        self.verticalLayout_4.setContentsMargins(9, -1, 9, -1)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
         self.promoscrollarea = QtWidgets.QScrollArea(self.promopage)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Expanding)
@@ -417,6 +419,7 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1008, 826))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
+        self.verticalLayout_8.setContentsMargins(-1, -1, 20, -1)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.promoscrollarea.setWidget(self.scrollAreaWidgetContents_3)
         self.verticalLayout_4.addWidget(self.promoscrollarea)
@@ -497,7 +500,7 @@ class Ui_MainWindow(object):
         self.groupescrollarea.setWidgetResizable(True)
         self.groupescrollarea.setObjectName("groupescrollarea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 998, 885))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 998, 907))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
@@ -718,7 +721,7 @@ class Ui_MainWindow(object):
         self.lobbyscrollarea.setWidgetResizable(True)
         self.lobbyscrollarea.setObjectName("lobbyscrollarea")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 991, 885))
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 998, 822))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
         self.verticalLayout_11 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_11.setObjectName("verticalLayout_11")

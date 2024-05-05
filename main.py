@@ -76,6 +76,7 @@ class MyMainWindow(QMainWindow):
         self.ui.fileButton.clicked.connect(lambda : self.ui.stackedWidget.setCurrentWidget(self.ui.filespage))
         #message_body = 
         self.ui.sendmessageButton.clicked.connect(self.add_promo_sent_message_to_ui)
+        self.ui.uploadfileButton.clicked.connect(self.add_promo_received_message_to_ui)
 
         #self.ui.sendmessageButton.clicked.connect(lambda: self.copy_frame())
         #send message
@@ -104,18 +105,18 @@ class MyMainWindow(QMainWindow):
         self.sendermessageFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.sendermessageFrame_2.setObjectName("sendermessageFrame_2")
         self.sendermessageFrame_2.setMinimumSize(QtCore.QSize(467, 50))
-        self.sendermessageFrame_2.setMaximumSize(QtCore.QSize(16777215, 500))
+        self.sendermessageFrame_2.setMaximumSize(QtCore.QSize(16777215, 90))
         self.sendermessageFrame_2.setBaseSize(QtCore.QSize(467, 50))
         self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.sendermessageFrame_2)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
         self.sendermessagebodyFrame_2 = QtWidgets.QFrame(self.sendermessageFrame_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.sendermessagebodyFrame_2.sizePolicy().hasHeightForWidth())
         self.sendermessagebodyFrame_2.setSizePolicy(sizePolicy)
         self.sendermessagebodyFrame_2.setMinimumSize(QtCore.QSize(467, 50))
-        self.sendermessagebodyFrame_2.setMaximumSize(QtCore.QSize(16777215, 500))
+        self.sendermessagebodyFrame_2.setMaximumSize(QtCore.QSize(16777215, 90))
         self.sendermessagebodyFrame_2.setBaseSize(QtCore.QSize(467, 50))
         self.sendermessagebodyFrame_2.setStyleSheet("background-color: #EBFFED;\n"
         "top: 18px;\n"
@@ -182,7 +183,7 @@ class MyMainWindow(QMainWindow):
 
         self.receivermessageFrame_2 = QtWidgets.QFrame(self.ui.scrollAreaWidgetContents_3)
         self.receivermessageFrame_2.setMinimumSize(QtCore.QSize(550, 90))
-        self.receivermessageFrame_2.setMaximumSize(QtCore.QSize(443, 16777215))
+        self.receivermessageFrame_2.setMaximumSize(QtCore.QSize(443, 90))
         self.receivermessageFrame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.receivermessageFrame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.receivermessageFrame_2.setObjectName("receivermessageFrame_2")
@@ -197,7 +198,7 @@ class MyMainWindow(QMainWindow):
         self.horizontalLayout_14.addWidget(self.senderpic_4)
         self.receivermessagebodyFrame_2 = QtWidgets.QFrame(self.receivermessageFrame_2)
         self.receivermessagebodyFrame_2.setMinimumSize(QtCore.QSize(0, 0))
-        self.receivermessagebodyFrame_2.setMaximumSize(QtCore.QSize(592, 16777215))
+        self.receivermessagebodyFrame_2.setMaximumSize(QtCore.QSize(592, 90))
         self.receivermessagebodyFrame_2.setStyleSheet("background-color: #FFFFFF;\n"
         "top: 618px;\n"
         "left: 86px;\n"
@@ -231,8 +232,8 @@ class MyMainWindow(QMainWindow):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.receivermessagetext_2.sizePolicy().hasHeightForWidth())
         self.receivermessagetext_2.setSizePolicy(sizePolicy)
-        self.receivermessagetext_2.setMinimumSize(QtCore.QSize(443, 40))
-        self.receivermessagetext_2.setMaximumSize(QtCore.QSize(592, 500))
+        self.receivermessagetext_2.setMinimumSize(QtCore.QSize(443, 50))
+        self.receivermessagetext_2.setMaximumSize(QtCore.QSize(592, 90))
         font = QtGui.QFont()
         font.setFamily("Open Sans")
         font.setPointSize(12)
