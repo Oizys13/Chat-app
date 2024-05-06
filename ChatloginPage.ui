@@ -198,6 +198,15 @@ color: #9A9A9A;
 padding-left:20px;
 </string>
             </property>
+            <property name="inputMethodHints">
+             <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhSensitiveData</set>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
             <property name="placeholderText">
              <string>Your Password</string>
             </property>

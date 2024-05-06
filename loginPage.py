@@ -88,6 +88,9 @@ class Ui_Login(object):
 "color: #9A9A9A;\n"
 "padding-left:20px;\n"
 "")
+        self.password.setInputMethodHints(QtCore.Qt.ImhHiddenText|QtCore.Qt.ImhNoAutoUppercase|QtCore.Qt.ImhNoPredictiveText|QtCore.Qt.ImhSensitiveData)
+        self.password.setInputMask("")
+        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password.setObjectName("password")
         self.verticalLayout_2.addWidget(self.password)
         self.signinButton = QtWidgets.QPushButton(self.signin_widget)

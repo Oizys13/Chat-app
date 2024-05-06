@@ -75,6 +75,7 @@ class Ui_CreateStudent(object):
 "border-radius:    4px;\n"
 "padding: 12px;\n"
 "font-size: 14px;")
+        self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.password.setObjectName("password")
         self.gridLayout.addWidget(self.password, 8, 0, 1, 1)
         self.label_4 = QtWidgets.QLabel(self.widget_3)

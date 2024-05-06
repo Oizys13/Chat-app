@@ -153,6 +153,9 @@ border-radius:	4px;
 padding: 12px;
 font-size: 14px;</string>
             </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
             <property name="placeholderText">
              <string>Enter text</string>
             </property>
