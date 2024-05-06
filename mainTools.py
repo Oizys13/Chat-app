@@ -39,9 +39,11 @@ def check_password(password, hashed_password):
 
 def authenticate(username, password):
     # connection = sql.create_connection()
-    query = f"SELECT * FROM `users` u WHERE `username` = {username} "
+    query = "SELECT * FROM users WHERE `username` = %s "
+
+
     print(query)
-    results = sql.execute_query(query, connection)[0]
+    results = sql.execute_query(query,(username,),connection)[0]
     enc_psw = results[3]
     if check_password(password, enc_psw):
         return results, True, ''
@@ -74,9 +76,9 @@ def get_chats(space, group, promo):
 
     elif space == 'all':
         collection = mongo.get_collection('all', mondb)
-        query = {}
+        query = {'all':'all'}
 
-    chats = mongo.execute_query(collection, query)
+    chats = mongo.execute_query(collection, query)[0]
     return chats
 
 
